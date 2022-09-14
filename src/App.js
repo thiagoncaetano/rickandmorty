@@ -1,24 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import "bootstrap/dist/css/bootstrap.css"
+import "bootstrap/dist/js/bootstrap"
+import { Col, Container, Row } from "react-bootstrap";
+import Cards from "./components/Cards/cards";
+import Filters from "./components/Filters/filters";
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container className="App">
+      <Row>
+        <Col className="text-center my-4">
+          <h1>RICK AND MORTY <span className="text-primary">WIKI</span></h1>
+        </Col>
+      </Row>
+      <Row>
+        <Filters />
+        <Col lg={8}>
+          <Row>
+            <Cards />
+          </Row>
+        </Col>
+      </Row>
+    </Container >
   );
 }
 
